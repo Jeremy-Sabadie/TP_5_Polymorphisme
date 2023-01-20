@@ -7,13 +7,15 @@ internal class Véhicule
     public float TimeReparation { get; private set; }
     public Garagist Garagist { get; private set; }
     public bool inReparation = false;
+    public string Name { get; set; }
 
     //Constructeur:
-    public Véhicule(double dommage, float timeReparation, Garagist garagist)
+    public Véhicule(string Name, double dommage, float timeReparation, Garagist garagist)
     {
         Dommage = dommage;
         TimeReparation = timeReparation;
         Garagist _garagist = garagist;
+
 
     }
 
@@ -26,6 +28,12 @@ internal class Véhicule
     {
         double Time = 1.5 * Dommage * (Garagist.Skills / 100);
         return Time;
+    }
+    public void Print()
+    {
+        Console.WriteLine(@$"Le véhicule : {véhicule}
+avec des dommages évalués à  {Dommage}%, est 
+réparé par: {garagist} pour une durée estimé à: {ReparationTime} ");
     }
 
 }
