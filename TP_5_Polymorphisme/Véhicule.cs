@@ -1,29 +1,31 @@
-﻿namespace TP_5_Polymorphisme
+﻿namespace TP_5_Polymorphisme;
+
+internal class Véhicule
 {
-    internal class Véhicule
-    {//Attributs de la classe Véhicule:
-        private double Dommage;
-        private float TimeReparation;
-        private string Garagist;
-        //Constructeur:
-        public Véhicule(double dommage, float timeReparation, string garagist)
+    //Attributs de la classe Véhicule:
+    public double Dommage { get; private set; }
+    public float TimeReparation { get; private set; }
+    public Garagist Garagist { get; private set; }
+    public bool inReparation = false;
 
-        {
-
-            Dommage = dommage;
-            TimeReparation = timeReparation;
-            Garagist = garagist;
-        }
-
-        //Accesseurs d'attributs:
-        public double Dommage1 { get => Dommage; set => Dommage = value; }
-        public float TimeReparation1 { get => TimeReparation; set => TimeReparation = value; }
-        public string Garagist1 { get => Garagist; set => Garagist = value; }
-        public float ReparationTime()
-        {
-            float Time = 1.5 * Dommage * (Garagist.Skills / 100);
-            return Time;
-        }
+    //Constructeur:
+    public Véhicule(double dommage, float timeReparation, Garagist garagist)
+    {
+        Dommage = dommage;
+        TimeReparation = timeReparation;
+        Garagist _garagist = garagist;
 
     }
+
+
+    /// <summary>
+    /// Méthode ReparationTime pour le calcul du temps de réparation du véhicule:
+    /// </summary>
+    /// <returns></returns>
+    public virtual double ReparationTime()
+    {
+        double Time = 1.5 * Dommage * (Garagist.Skills / 100);
+        return Time;
+    }
+
 }
