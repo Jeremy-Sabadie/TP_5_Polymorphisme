@@ -3,8 +3,10 @@
     internal class Truck : Véhicule
 
     {
-        public Truck(string Name, double dommage, float timeReparation, Garagist garagist)
-        : base(dommage, timeReparation, Garagist garagist)
+
+
+        public Truck(string Name, double dommage, Garagist garagist)
+        : base(Name, dommage, garagist)
         {
 
         }

@@ -14,12 +14,16 @@ internal class Garage
             véhicules.Add(v);
             Console.WriteLine($"Le véhicule {v.Name}");
         }
-        Public void AfficherListe{
-            Console.WriteLine("Véhicules en réparation:");
-            for (int i = 0; i < véhicules.Count; i++)
-            {
-                Console.WriteLine($"|{v}|");
-            };
+
+    }
+    public void AfficherListe()
+    {
+        Console.WriteLine("Véhicules en réparation:");
+        for (int i = 0; i < véhicules.Count; i++)
+        {
+            Console.WriteLine($"|{véhicules[i].Name}|");
+            Console.WriteLine($"|{véhicules[i].Garagist}|");
         }
     }
 }
+
