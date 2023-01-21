@@ -29,11 +29,11 @@ internal class Véhicule
         double Time = 1.5 * Dommage * (Garagist.Skills / 100);
         return Time;
     }
-    public void Print()
+    public void Print(Véhicule v)
     {
-        Console.WriteLine(@$"Le véhicule : {véhicule}
-avec des dommages évalués à  {Dommage}%, est 
-réparé par: {garagist} pour une durée estimé à: {ReparationTime} ");
+        Console.WriteLine(@$"Le véhicule : {v}
+avec des dommages évalués à  {v.Dommage}%, est 
+réparé par: {v.Garagist}pour une durée estimé à: {v.ReparationTime} ");
     }
 
 }
