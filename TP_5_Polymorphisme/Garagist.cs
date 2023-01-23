@@ -2,12 +2,22 @@
 
 internal class Garagist
 {
-    private string Name;
-    private string FirstName;
-    public float Skills { get; private set; }
-    private List<Véhicule> Véhicules;
+    private string _Name;
+    private string _FirstName;
+    public int Skills { get; private set; }
+    private List<Véhicule> garagists = new List<Véhicule>();
 
-    public string Name1 { get => Name; set => Name = value; }
-    public string FirstName1 { get => FirstName; set => FirstName = value; }
-    internal List<Véhicule> Véhicules1 { get => Véhicules; set => Véhicules = value; }
+    public string Name { get => _Name; set => _Name = value; }
+    public string FirstName { get => _FirstName; set => _FirstName = value; }
+    private List<Véhicule> Véhicules { get => Véhicules; set => Véhicules = value; }
+    public Garagist(string Name, string FirstName, int Skills)
+    {
+        _Name = Name;
+        _FirstName = FirstName;
+        Skills = Skills;
+    }
+    public void addInList(Véhicule véhicule)
+    {
+        Véhicules.Add(véhicule);
+    }
 }

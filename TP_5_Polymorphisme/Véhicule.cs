@@ -3,17 +3,17 @@
 internal class Véhicule
 {
     //Attributs de la classe Véhicule:
-    public double Dommage { get; private set; }
-    public float TimeReparation { get; private set; }
+    public int Dommage { get; private set; }
+
     public Garagist Garagist { get; private set; }
     public bool inReparation = false;
     public string Name { get; set; }
+    private List<Garagist> garagists = new List<Garagist>();
 
     //Constructeur:
-    public Véhicule(string Name, double dommage, float timeReparation, Garagist garagist)
+    public Véhicule(string Name, int dommage, Garagist garagist)
     {
         Dommage = dommage;
-        TimeReparation = timeReparation;
         Garagist _garagist = garagist;
 
 
@@ -29,11 +29,12 @@ internal class Véhicule
         double Time = 1.5 * Dommage * (Garagist.Skills / 100);
         return Time;
     }
-    public void Print()
+    public void Print(Garagist g
+        )
     {
-        Console.WriteLine(@$"Le véhicule : {véhicule}
-avec des dommages évalués à  {Dommage}%, est 
-réparé par: {garagist} pour une durée estimé à: {ReparationTime} ");
+        Console.WriteLine(@$"Le véhicule : |{Name}|
+avec des dommages évalués à  |{Dommage}%|, est 
+réparé par: |{g.Name} |pour une durée estimé à: |{ReparationTime}|");
     }
 
 }

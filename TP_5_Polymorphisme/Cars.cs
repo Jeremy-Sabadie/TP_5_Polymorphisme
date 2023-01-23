@@ -1,10 +1,10 @@
 ﻿namespace TP_5_Polymorphisme
 {
-    internal class Truck : Véhicule
+    internal class Cars : Véhicule
 
     {
-        public Truck(string Name, int dommage, Garagist garagist)
-        : base(Name, dommage, garagist)
+        public Cars(string Name, int dommage, Garagist garagist)
+         : base(Name, dommage, garagist)
         {
             Name = Name;
             dommage = dommage;
