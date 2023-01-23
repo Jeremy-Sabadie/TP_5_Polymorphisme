@@ -9,6 +9,7 @@
             Name = Name;
             dommage = dommage;
         }
+        private List<Garagist> garagists { get; set; } = new List<Garagist>();
 
         /// <summary>
         /// Méthode de calcul du temps de réparation spécifique à truck:
@@ -16,15 +17,19 @@
         /// <returns></returns>
         public override double ReparationTime()
         {
-            double Time = 1.5 * Dommage * (Garagist.Skills / 100);
+            double Time = 1.5 * Dommage * (Garagist.Skills / 100f);
             return Time;
         }/// <summary>
          /// Affiche le garagiste en charge du véhicule.
          /// </summary>
          /// <param name="v"></param>
-        public void isTheGaragist(Véhicule v)
+        public override void isTheMecanic(Garagist G)
         {
-            Console.WriteLine($"Lgaragiste en charge du véhicule est:{v.Garagist}");
+            garagists.Add(G);
+            Console.WriteLine($"Lgaragiste en charge du véhicule est:{G._Name}");
         }
+
     }
+
+
 }

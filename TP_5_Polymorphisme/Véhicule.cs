@@ -14,7 +14,8 @@ internal class Véhicule
     public Véhicule(string Name, int dommage, Garagist garagist)
     {
         Dommage = dommage;
-        Garagist _garagist = garagist;
+        Garagist = garagist;
+
 
 
     }
@@ -34,7 +35,16 @@ internal class Véhicule
     {
         Console.WriteLine(@$"Le véhicule : |{Name}|
 avec des dommages évalués à  |{Dommage}%|, est 
-réparé par: |{g.Name} |pour une durée estimé à: |{ReparationTime}|");
+réparé par: |{g._Name} |pour une durée estimé à: |{ReparationTime}|");
+    }
+    public virtual void isTheGaragist(Véhicule v)
+    {
+        Console.WriteLine($"Lgaragiste en charge du véhicule est:{v.Garagist}");
+    }
+    public virtual void isTheMecanic(Garagist G)
+    {
+        garagists.Add(G);
+        Console.WriteLine($"Lgaragiste en charge du véhicule est:{G._Name}");
     }
 
 }

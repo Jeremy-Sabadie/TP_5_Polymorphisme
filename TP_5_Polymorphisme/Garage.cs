@@ -5,6 +5,7 @@ internal class Garage
     private List<Véhicule> véhicules = new List<Véhicule>();
     private string Name { get; set; }
     private int SiretNumber { get; set; }
+
     /// <summary>
     /// Méthode pour afficher les voitures en curs de réparation.
     /// </summary>
@@ -18,12 +19,17 @@ internal class Garage
             Console.WriteLine($"Le véhicule {v.Name}");
         }
     }
-    public void PrintList()
+    public void PrintList(Garage G)
     {
-        Console.WriteLine("Véhicules en réparation:");
+
         for (int i = 0; i < véhicules.Count; i++)
         {
-            Console.WriteLine($"|{v}|");
+            Console.WriteLine($"////////////////////////////////////////////////////////////////////////////////////////////");
+
+            Console.WriteLine($@"Véhicules en réparation: {véhicules[i].Name} et sont garagiste est: {véhicules[i].Garagist}
+pour un temps estimé à: véhicules[i].ReparationTime()");
+            Console.WriteLine($"////////////////////////////////////////////////////////////////////////////////////////////");
+
         }
     }
 
@@ -36,6 +42,10 @@ internal class Garage
      /// </summary>
      /// <param name="véhicule"></param>
     public void removeToGarageList(Véhicule véhicule)
+    {
+        véhicules.Remove(véhicule);
+    }
+    public void addInGarageList(Véhicule véhicule)
     {
         véhicules.Remove(véhicule);
     }
