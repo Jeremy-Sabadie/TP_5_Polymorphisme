@@ -16,8 +16,15 @@
         /// <returns></returns>
         public override double ReparationTime()
         {
-            double Time = 2 * Dommage * (Garagist.Skills / 100);
+            double Time = 1.5 * Dommage * (Garagist.Skills / 100);
             return Time;
+        }/// <summary>
+         /// Affiche le garagiste en charge du véhicule.
+         /// </summary>
+         /// <param name="v"></param>
+        public void isTheGaragist(Véhicule v)
+        {
+            Console.WriteLine($"Lgaragiste en charge du véhicule est:{v.Garagist}");
         }
     }
 }
