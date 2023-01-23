@@ -12,23 +12,16 @@ internal class Garage
     /// <param></param>
     public void addVehiculesInReparation(Véhicule v)
     {
-
-        if (v.inReparation == true)
-        {
-            véhicules.Add(v);
-            Console.WriteLine($"Le véhicule {v.Name}");
-        }
+        véhicules.Add(v);
     }
-    public void PrintList(Garage G)
+    public void PrintList()
     {
-
         for (int i = 0; i < véhicules.Count; i++)
         {
-            Console.WriteLine($"////////////////////////////////////////////////////////////////////////////////////////////");
 
-            Console.WriteLine($@"Véhicules en réparation: {véhicules[i].Name} et sont garagiste est: {véhicules[i].Garagist}
-pour un temps estimé à: véhicules[i].ReparationTime()");
-            Console.WriteLine($"////////////////////////////////////////////////////////////////////////////////////////////");
+            Console.WriteLine($@"Véhicules en réparation : {véhicules[i].Name} endommagé à {véhicules[i].Dommage} %:, sera pris en charge par : {véhicules[i].Garagist._Name}
+pour un temps estimé à:{véhicules[i].ReparationTime()} heures.");
+            Console.WriteLine("////////////////////////////////////////////////////////////////////////////////////////////");
 
         }
     }
@@ -47,7 +40,7 @@ pour un temps estimé à: véhicules[i].ReparationTime()");
     }
     public void addInGarageList(Véhicule véhicule)
     {
-        véhicules.Remove(véhicule);
+        véhicules.Add(véhicule);
     }
 }
 

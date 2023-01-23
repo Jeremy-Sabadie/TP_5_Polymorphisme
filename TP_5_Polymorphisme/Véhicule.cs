@@ -11,8 +11,9 @@ internal class Véhicule
     private List<Garagist> garagists = new List<Garagist>();
 
     //Constructeur:
-    public Véhicule(string Name, int dommage, Garagist garagist)
+    public Véhicule(string name, int dommage, Garagist garagist)
     {
+        Name = name;
         Dommage = dommage;
         Garagist = garagist;
 
@@ -27,7 +28,7 @@ internal class Véhicule
     /// <returns></returns>
     public virtual double ReparationTime()
     {
-        double Time = 1.5 * Dommage * (Garagist.Skills / 100);
+        double Time = 1.5 * Dommage * (Garagist.Skills / 100f);
         return Time;
     }
     public void Print(Garagist g
@@ -44,7 +45,7 @@ réparé par: |{g._Name} |pour une durée estimé à: |{ReparationTime}|");
     public virtual void isTheMecanic(Garagist G)
     {
         garagists.Add(G);
-        Console.WriteLine($"Lgaragiste en charge du véhicule est:{G._Name}");
+        Console.WriteLine($"Le garagiste en charge du véhicule est:{G._Name}");
     }
 
 }

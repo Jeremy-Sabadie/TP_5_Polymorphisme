@@ -26,7 +26,7 @@
         public override void isTheMecanic(Garagist G)
         {
             garagists.Add(G);
-            Console.WriteLine($"Lgaragiste en charge du véhicule est:{G._Name}");
+            //Console.WriteLine($"Le garagiste en charge du véhicule est:{G._Name}");
         }
 
     }
